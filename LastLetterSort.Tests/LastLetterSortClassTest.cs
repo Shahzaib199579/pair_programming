@@ -21,4 +21,17 @@ public class LastLetterSortClassTest
         result = _lastLetterSort.SortByLastLetter(null);
         result.Count().Should().Be(0);
     }
+
+    [Test]
+    public void Sort_By_Method_Should_Return_Correctly_Sorted_List()
+    {
+        var result = _lastLetterSort.SortByLastLetter("How are you gate");
+
+        var expectedResult = new List<string> { "are", "gate", "you", "How" };
+
+        for (int i = 0; i < result.Count; i++)
+        {
+            result[i].Should().Be(expectedResult[i]);
+        }
+    }
 }
